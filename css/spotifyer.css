@@ -1,0 +1,114 @@
+body {
+  background: #888;
+  color: #333;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 32px;
+  padding: 0;
+}
+@media screen and (max-width: 600px) {
+  body {
+    margin: 24px;
+  }
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2 {
+  display: inline;
+}
+@media screen and (max-width: 600px) {
+  h1,
+  h2 {
+    display: block;
+  }
+}
+h1 {
+  color: #1ed761;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0 16px 0 0;
+}
+h2 {
+  color: #333;
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+section {
+  margin: 64px 0 0;
+}
+button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+button a {
+  color: #333;
+  display: inline-block;
+  background: #fff;
+  color: #888;
+  font-size: 18px;
+  padding: 4px 16px;
+}
+button a::before {
+  content: "+ ";
+}
+button a:hover {
+  background: #1ed761;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 32px 0 0;
+  padding: 0;
+}
+li {
+  float: left;
+  margin: 0 40px 40px 0;
+  width: 300px;
+  text-align: right;
+  line-height: 0;
+}
+@media screen and (max-width: 600px) {
+  li {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+iframe {
+  max-width: 100%;
+}
+@media screen and (max-width: 600px) {
+  iframe {
+    width: 100%;
+  }
+}
+h3 {
+  margin: 8px 0 0;
+  padding: 0;
+}
+h3 a {
+  display: inline-block;
+  color: #333;
+  font-size: 12px;
+  font-weight: 300;
+  font-style: italic;
+}
+h3 a:hover {
+  color: #000;
+}
+h3 img {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  vertical-align: middle;
+  margin-right: 2px;
+}

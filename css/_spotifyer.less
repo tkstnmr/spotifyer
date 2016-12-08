@@ -1,0 +1,132 @@
+// out:./spotifyer.css
+
+// sp
+
+@sp: 600px;
+
+// color
+
+@spotify: #1ed761;
+@bg: #888;
+@text: #333;
+
+// weight
+
+@thin: 100;
+@regular: 300;
+@bold: 700;
+
+// init
+
+body {
+  background: @bg;
+  color: @text;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: @regular;
+  line-height: 1.5;
+  margin: 32px;
+  padding: 0;
+  @media screen and (max-width: @sp) {
+    margin: 24px;
+  }
+}
+a {
+  text-decoration: none;
+}
+
+// header
+
+h1,
+h2 {
+  display: inline;
+  @media screen and (max-width: @sp) {
+    display: block;
+  }
+}
+h1 {
+  color: @spotify;
+  font-size: 40px;
+  font-weight: @bold;
+  margin: 0;
+  padding: 0 16px 0 0;
+}
+h2 {
+  color: @text;
+  font-size: 12px;
+  font-weight: @regular;
+  margin: 0;
+  padding: 0;
+}
+
+// section
+
+section {
+  margin: 64px 0 0;
+}
+button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  a {
+    color: @text;
+    display: inline-block;
+    background: #fff;
+    color: @bg;
+    font-size: 18px;
+    padding: 4px 16px;
+    &::before {
+      content: "+ ";
+    }
+    &:hover {
+      background: @spotify;
+    }
+  }
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 32px 0 0;
+  padding: 0;
+}
+li {
+  float: left;
+  margin: 0 40px 40px 0;
+  width: 300px;
+  text-align: right;
+  line-height: 0;
+  @media screen and (max-width: @sp) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+iframe {
+  max-width: 100%;
+  @media screen and (max-width: @sp) {
+    width: 100%;
+  }
+}
+h3 {
+  margin: 8px 0 0;
+  padding: 0;
+  a {
+    display: inline-block;
+    color: @text;
+    font-size: 12px;
+    font-weight: @regular;
+    font-style: italic;
+    &:hover {
+      color: #000;
+    }
+  }
+  img {
+    @v: 20px;
+    width: @v;
+    height: @v;
+    border-radius: @v / 2;
+    vertical-align: middle;
+    margin-right: 2px;
+  }
+}
