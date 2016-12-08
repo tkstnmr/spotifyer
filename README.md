@@ -11,8 +11,11 @@
   <h3>
     <a href="{{twitter url}}">
       <img src="{{profile image url}}" alt="">
-      @username
+      {{@username}}
     </a>
   </h3>
+  <p>
+    {{description}}
+  </p>
 </li>
 ```
