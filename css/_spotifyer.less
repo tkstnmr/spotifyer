@@ -1,13 +1,14 @@
 // out:./spotifyer.css
 
-// sp
-
 @sp: 600px;
+@grid: 316px;
+@margin: 8px;
 
 // color
 
 @spotify: #1ed761;
 @bg: #888;
+@bg-cell: #181818;
 @text: #333;
 
 // weight
@@ -25,7 +26,7 @@ body {
   font-family: sans-serif;
   font-weight: @regular;
   line-height: 1.5;
-  margin: 32px;
+  margin: 0;
   padding: 0;
   @media screen and (max-width: @sp) {
     margin: 24px;
@@ -33,6 +34,32 @@ body {
 }
 a {
   text-decoration: none;
+}
+
+// architecture
+
+body,
+html {
+  height: 100%;
+}
+header {
+  position: absolute;
+  padding: 32px;
+  box-sizing: border-box;
+  @media screen and (max-width: @sp) {
+    padding: 0 0 64px;
+    position: static;
+  }
+}
+section {
+  height: 100%;
+  padding: 100px 32px 0;
+  box-sizing: border-box;
+  overflow-x: scroll;
+  @media screen and (max-width: @sp) {
+    padding: 0;
+    overflow-x: visible;
+  }
 }
 
 // header
@@ -49,20 +76,17 @@ h1 {
   font-size: 40px;
   font-weight: @bold;
   margin: 0;
-  padding: 0 16px 0 0;
-}
-h2 {
-  color: @text;
-  font-size: 12px;
-  font-weight: @regular;
-  margin: 0;
   padding: 0;
 }
-
-// section
-
-section {
-  margin: 64px 0 0;
+h2 {
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  font-weight: @regular;
+  margin: 0 16px;
+  padding: 0;
+  @media screen and (max-width: @sp) {
+    margin: 4px 0 24px;
+  }
 }
 button {
   background: none;
@@ -70,50 +94,71 @@ button {
   margin: 0;
   padding: 0;
   a {
-    color: @text;
     display: inline-block;
-    background: #fff;
-    color: @bg;
+    color: #fff;
     font-size: 18px;
-    padding: 4px 16px;
+    padding: 0 8px 2px;
+    border-bottom: 2px solid #fff;
     &::before {
       content: "+ ";
     }
     &:hover {
-      background: @spotify;
+      color: @spotify;
+      border-color: @spotify;
     }
   }
 }
+
+// section
+
 ul {
-  display: flex;
-  flex-wrap: wrap;
   list-style-type: none;
-  margin: 32px 0 0;
+  margin: 0;
   padding: 0;
+  height: 100%;
+  white-space: nowrap;
+  @media screen and (max-width: @sp) {
+    white-space: normal;
+    height: auto;
+    padding-bottom: 16px;
+  }
 }
 li {
-  float: left;
-  margin: 0 40px 40px 0;
-  width: 300px;
+  display: inline-block;
+  background: @bg-cell;
+  margin: 0 @margin 0 0;
+  width: @grid;
+  height: calc(~'100% - 64px');
+  margin-top: 32px;
+  border-radius: 6px;
   text-align: right;
   line-height: 0;
   @media screen and (max-width: @sp) {
+    display: block;
     width: 100%;
-    margin-right: 0;
+    height: auto;
+    margin: 0 0 24px;
+    padding-bottom: 8px;
   }
 }
 iframe {
   max-width: 100%;
+  height: calc(~'100% - 80px');
+  display: block;
+  margin: 0 auto;
+  padding-top: 8px;
+  box-sizing: border-box;
   @media screen and (max-width: @sp) {
     width: 100%;
+    height: 380px;
   }
 }
 h3 {
-  margin: 8px 0 4px;
-  padding: 0;
+  margin: 0;
+  padding: 12px 8px 4px;
   a {
     display: inline-block;
-    color: @text;
+    color: @bg;
     font-size: 12px;
     font-weight: @regular;
     font-style: italic;
@@ -132,4 +177,6 @@ h3 {
 }
 p {
   font-size: 12px;
+  color: @bg;
+  padding: 0 8px;
 }
